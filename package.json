@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prestart": "cd node_modules/react-native-pdftron && npm start && cd ../../"
+    "prestart": "tsc"
   },
   "dependencies": {
     "react": "17.0.2",
