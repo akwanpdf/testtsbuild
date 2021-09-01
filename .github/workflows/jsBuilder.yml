@@ -23,7 +23,7 @@ jobs:
       - name: Build JavaScript files
         run: | # Change last line to your build script command #.
           npm i
-          npm run start 
+          npx tsc 
 
       - name: Force add JS files to override .gitignore
         run: git add --force ./lib # <-- Change this to your build path.
