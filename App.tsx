@@ -75,7 +75,7 @@ const App = () => {
           }}>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits, please and thank you. Main did not accept PR to dev because it is a protected branch; I will add an approving review to PR and see if main accepts it this time. That didn't work either, so now I unclicked 'include administrators' from the rule.
+            screen and then come back to see your edits, please and thank you. Main did not accept PR to dev because it is a protected branch; I will add an approving review to PR and see if main accepts it this time. That didn't work either, so now I unclicked 'include administrators' from the rule. Finally allowing force pushes.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
