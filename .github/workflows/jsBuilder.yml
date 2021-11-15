@@ -1,5 +1,18 @@
 name: Transpile TS
 
+on: [pull_request]
+
+jobs:
+  check-base-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          protected-branches: "main, production"
+          default-branch: "dev"
+          update-branch: true
+
 on:
   push:
     branches: [dev] # <-- Change this to the primary branch (for example, "dev" if you want all changes to `dev` to be watched).
