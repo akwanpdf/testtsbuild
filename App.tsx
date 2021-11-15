@@ -55,6 +55,10 @@ const Section: React.FC<{
   );
 };
 
+/**
+ * Add a new test comment just to change App.tsx
+ * @returns 
+ */
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
