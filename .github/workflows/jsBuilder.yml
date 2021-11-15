@@ -5,6 +5,12 @@ on:
     branches: [dev] # <-- Change this to the primary branch (for example, "dev" if you want all changes to `dev` to be watched).
 
 jobs:
+  check-base-branch:
+    steps:
+      - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          protected-branches: "main"
   build:
     runs-on: ubuntu-latest
     steps:
