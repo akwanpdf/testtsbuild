@@ -1,29 +1,10 @@
 name: Transpile TS
 
-on: [pull_request]
-
-jobs:
-  check-base-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          protected-branches: "main, production"
-          default-branch: "dev"
-          update-branch: true
-
 on:
   push:
     branches: [dev] # <-- Change this to the primary branch (for example, "dev" if you want all changes to `dev` to be watched).
 
 jobs:
-  check-base-branch:
-    steps:
-      - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          protected-branches: "main"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +15,7 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo.
 
 
-      - name: Build JavaScript files
+      - name: Config with personal token
         run: | 
           git config remote.origin.url 'https://${{ your_personal_access_token }}@github.com/${{ github.repository }}'
 
