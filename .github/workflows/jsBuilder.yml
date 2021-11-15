@@ -14,6 +14,11 @@ jobs:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token.
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo.
 
+
+      - name: Config with personal token
+        run: | 
+          git config remote.origin.url 'https://${{ your_personal_access_token }}@github.com/${{ github.repository }}'
+
       - name: Node setup
         uses: actions/setup-node@v2
         with:
