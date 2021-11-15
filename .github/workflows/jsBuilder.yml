@@ -38,7 +38,7 @@ jobs:
       - name: Push changes
         run: | # git pull --rebase origin main
           
-          git push origin main
+          git push origin HEAD:main
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@v0.6.0
