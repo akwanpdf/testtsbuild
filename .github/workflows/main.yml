@@ -1,0 +1,14 @@
+name: Prevent PRs to main
+
+on: [pull_request]
+
+jobs:
+  check-base-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          protected-branches: "main"
+          default-branch: "dev"
+          update-branch: true
